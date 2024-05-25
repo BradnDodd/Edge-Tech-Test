@@ -3,13 +3,8 @@ tree:
     id: ae84904c-b9ed-4ee3-bbc3-ae5c00feab7c
     entry: home
   -
-    id: 5611d85b-6394-4253-b6ca-b10ef31c12b9
-    title: Examples
-    url: '#'
-    children:
-      -
-        id: 0d394cfc-013d-47c6-a12a-a992e077d846
-        entry: 20f6a148-63b8-47a8-9b0e-d57095d78c21
-      -
-        id: 7185b1e8-9e93-44eb-9d54-5869c1f8e4fd
-        entry: 5c526dbf-9dd7-4c52-98d8-54e00ebddfb6
+    id: 66188f35-6e72-4a42-9a1f-d5056ae87138
+    entry: 50393187-db75-4b01-8bb4-5fc48a137f11
+  -
+    id: c5c302f6-3f6f-4d8a-829f-4bcce19c8b82
+    entry: 198cd76a-ca0e-4e08-b46b-c6cdab5bfbdc
