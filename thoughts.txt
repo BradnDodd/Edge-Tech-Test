@@ -1,0 +1,6 @@
+This is a document to roughly describe the though process throughout the build.
+
+1. Decided to use a starter as its a technology I'm not familiar with and would likely be quicker to build out from a starter kit compared to scratch.
+Went with the peak pack as it had seemingly more options for building out pages as well as SEO features built in; its easier to start with those features there and not used than trying to add later on
+2. Next was to create the main pages as per the design brief
+3. Then I built out the films collection and entities as they are the main content for the site
