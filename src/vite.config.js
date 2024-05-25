@@ -14,7 +14,10 @@ export default defineConfig(({ command, mode }) => {
             })
         ],
         server: {
-            open: env.APP_URL
-        }
+            host: '0.0.0.0',
+            hmr: {
+                host: 'localhost'
+            },
+        },
     }
 });
