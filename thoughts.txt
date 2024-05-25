@@ -4,3 +4,44 @@ This is a document to roughly describe the though process throughout the build.
 Went with the peak pack as it had seemingly more options for building out pages as well as SEO features built in; its easier to start with those features there and not used than trying to add later on
 2. Next was to create the main pages as per the design brief
 3. Then I built out the films collection and entities as they are the main content for the site
+4. I then watched through the Laracasts Statamic series before I went too far into things to make sure I had a good grasp on the concepts of Statamic.
+The series was based on V3 but I scanned through the V3-4 and V4-5 upgrade guides and didn't spot any breaking change that would make the tutorial series too out of date
+5. Rough out a plan for development;
+    - Add ability to add a film
+    - Add Film index/ Gallery page
+    - Add searching by title
+    - Add meta data as "tags"
+    - Add indexing/ filtered using tags
+    - Add User system outside Statamic
+    - Create logged in only pages
+    - Plumb control of being logged into Statamic
+    - Add scroll bar for gallery page
+
+    Potential Future features;
+    - Watch lists
+        - Private lists for a single user
+            - Name
+            - Description
+            - Movies
+                - Mark a movie as watched
+        - Public lists created by moderator i.e top 10 action movies
+        - Public lists created by Users but approved by moderators before being visible
+        - Searching, filtering etc. for lists
+        - SEO for lists
+    - Reviews of a movie with moderator approval
+        - Full text written reviews
+        - 10 star rating system
+            - Could pull in IMDB / TMDb ratings
+            - As well as separate ratings based of users of this site
+    - User permissions
+        - Comments
+            - Must have verified email address
+            - All comments must be approved by a moderator
+        - Moderators
+            - Can approve comments
+            - Remove films
+            - Add films
+    - Automated pulling in of film data from API
+        - Maybe put them into a non visible state for approval by a moderation before being visible
+    - Film gallery styling choice for a user;
+        - Switch between "grid" and "list" views
