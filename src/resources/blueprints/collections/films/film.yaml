@@ -32,7 +32,7 @@ tabs:
               type: textarea
               display: Description
           -
-            handle: year_of
+            handle: release_date
             field:
               type: date
               display: 'Release Date'

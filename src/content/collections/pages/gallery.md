@@ -10,4 +10,6 @@ sitemap_priority: 0.5
 updated_by: d830de32-a0be-47d7-9f11-5f980e5d4ca3
 updated_at: 1716822035
 parent: home
+template: films/index
+
 ---
