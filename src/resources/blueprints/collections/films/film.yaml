@@ -5,6 +5,13 @@ tabs:
       -
         fields:
           -
+            handle: poster
+            field:
+              container: images
+              restrict: true
+              type: assets
+              display: Poster
+          -
             handle: title
             field:
               type: text
