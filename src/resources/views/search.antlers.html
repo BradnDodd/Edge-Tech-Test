@@ -1,0 +1,17 @@
+<header class="my-12 text-center md:my-16 lg:my-24">
+    <p class="mb-4 text-lg antialiased font-bold text-green">Search Results For</p>
+    <h1 class="text-6xl font-bold md:text-7xl lg:text-8xl">{{ get:q }}</h1>
+</header>
+
+<section class="flex-col max-w-4xl mx-auto space-y-4 divide-y">
+    {{ search:results }}
+    <div class="py-4">
+        <div class="flex items-center justify-between">
+            <h2><a class="inline-block text-3xl font-bold text-yellow hover:underline" href="{{ url }}">{{ title }}</a></h2>
+        </div>
+        <div class="mt-2 font-regular">
+            {{ description | safe_truncate(140) }}...
+        </div>
+    </div>
+    {{ /search:results }}
+</section>
