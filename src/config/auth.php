@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'statamic' => [
+            'driver' => 'session',
+            'provider' => 'statamic',
+        ]
     ],
 
     /*
@@ -61,14 +65,13 @@ return [
 
     'providers' => [
         'users' => [
-            'driver' => 'statamic',
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
 
-        // 'users' => [
-        //     'driver' => 'eloquent',
-        //     'model' => env('AUTH_MODEL', App\Models\User::class),
-        // ],
-
+        'statamic' => [
+            'driver' => 'statamic',
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -105,6 +108,20 @@ return [
         'activations' => [
             'provider' => 'users',
             'table' => env('AUTH_ACTIVATION_TOKEN_TABLE', 'password_activation_tokens'),
+            'expire' => 4320,
+            'throttle' => 60,
+        ],
+
+        'statamic_resets' => [
+            'provider' => 'statamic',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'statamic_activations' => [
+            'provider' => 'statamic',
+            'table' => 'password_activations',
             'expire' => 4320,
             'throttle' => 60,
         ],

@@ -45,3 +45,7 @@ The series was based on V3 but I scanned through the V3-4 and V4-5 upgrade guide
         - Maybe put them into a non visible state for approval by a moderation before being visible
     - Film gallery styling choice for a user;
         - Switch between "grid" and "list" views
+6. As I was going through the frontend elements I would rough out the general structure of the page/ element then start to refine and add more detail
+7. I chose Laravel breeze with blade templates to handle the User accounts outside of Statamic.
+This is due to how much functionality you get out of box with the basic breeze install then it was just a case of small styling tweaks to match the statamic styling.
+One future step would be to bring all Auth pages under statamic control and align the styling

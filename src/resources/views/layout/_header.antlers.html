@@ -2,8 +2,25 @@
 
 <!-- /layout/_header.antlers.html -->
 <header class="py-4">
-    <div class="flex items-center span-content">
-        {{ partial:navigation/main }}
+    <div class="flex items-center justify-between">
+        <div class="flex items-center span-content">
+            {{ partial:navigation/main }}
+        </div>
+        <div>
+            {{ if logged_in }}
+                <form method="POST" action="{{ route:logout }}">
+                    {{ csrf_field }}
+                    <button type="submit" class="border-2 border-black px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]">Logout</button>
+                </form>
+            {{ else }}
+                <a
+                href="{{ route:login }}"
+                class="border-2 border-black px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                >
+                    Sign in
+                </a>
+            {{ /if}}
+        </div>
     </div>
 </header>
 <!-- End: /layout/_header.antlers.html -->
