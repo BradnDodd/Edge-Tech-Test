@@ -1,6 +1,8 @@
 title: Films
 template: films/show
 layout: layout
+taxonomies:
+  - genre
 revisions: false
 route: '/{mount}/{slug}'
 sort_dir: asc
