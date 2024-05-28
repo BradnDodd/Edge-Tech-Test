@@ -2,8 +2,8 @@
     <div class="grid justify-between grid-cols-1 col-span-3 gap-3 px-10">
         {{ collection:films }}
             <div class="flex flex-wrap">
-                <div class="w-1/4">
-                    <img class="h-auto" src="{{ poster ?? 'https://placehold.co/150x150' }}" alt="{{ poster:alt }}">
+                <div class="w-1/4 px-5">
+                    <img class="w-full h-auto" src="{{ poster ?? 'https://placehold.co/150x150' }}" alt="{{ poster:alt }}">
                 </div>
                 <div class="flex flex-col flex-wrap w-3/4">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{{ title }} ({{ release_date format="Y" }})</h5>
