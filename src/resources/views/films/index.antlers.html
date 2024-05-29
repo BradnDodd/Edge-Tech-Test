@@ -19,7 +19,9 @@
 
                     <div class="flex flex-wrap">
                         {{ genre }}
-                            <a href="{{ url }}" class="inline px-2 py-1 mr-2 text-sm bg-red-400 rounded-md">{{ title }}</a>
+                            {{ if entries}}
+                                <a href="{{ url }}" class="inline px-2 py-1 mr-2 text-sm bg-red-400 rounded-md">{{ title }}</a>
+                            {{ /if}}
                         {{ /genre }}
                     </div>
                 </div>
