@@ -1,5 +1,6 @@
 <div class="grid justify-between grid-cols-4 gap-3 p-10 border-2 border-black ">
     <div class="grid justify-between grid-cols-1 col-span-3 gap-3 px-10">
+        {{# @todo Pull a single "film card" into a partial #}}
         {{ collection:films }}
             <div class="flex flex-wrap">
                 <div class="w-1/4 px-5">
@@ -14,10 +15,14 @@
                         <p class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">{{ rating }} / 10</p>
                     </div>
                     <p class="font-normal text-gray-700">
+                        {{# @todo only show elipses if description is over 140 characters
+                            @todo pull max description length into a config/ env variable/ proprty of the film collection
+                         #}}
                         {{ description | safe_truncate(140) }}...
                     </p>
 
                     <div class="flex flex-wrap">
+                        {{# @todo pull genres into a component #}}
                         {{ genre }}
                             {{ if entries}}
                                 <a href="{{ url }}" class="inline px-2 py-1 mr-2 text-sm bg-red-400 rounded-md">{{ title }}</a>
@@ -28,6 +33,9 @@
             </div>
         {{ /collection:films }}
     </div>
+    {{# Search Bar
+        @todo Pull this out into a partial
+    #}}
     <div class="flex col-span-1 p-10 border-2 border-black">
         <div x-data="{ showSearch: false, searchQuery: '', searchResults: false }" @keydown.escape="showSearch = (searchQuery !== ''); searchQuery = ''">
             <button type="button" class="items-center hidden px-4 py-2 antialiased font-bold text-gray-900 transition md:flex group hover:text-gray-500" @click="showSearch = true; $focus.next()">
@@ -46,7 +54,10 @@
                     </form>
                 </div>
             </div>
+            {{# @todo Pull genre filter into a partial; likely have a partial for a dropdown aswell
+                @todo add more filters; author (dropdown), year of release(slider for a date range) #}}
             <div class="relative inline-block text-left">
+                {{# Trigger #}}
                 <div>
                     <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
                     Genre
@@ -55,7 +66,7 @@
                     </svg>
                     </button>
                 </div>
-
+                {{# Genre values #}}
                 <div class="absolute right-0 z-10 hidden w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" id="dropdown-menu" tabindex="-1">
                     <div class="py-1" role="none">
                     {{ taxonomy:genre }}
@@ -71,6 +82,8 @@
         </div>
     </div>
 </div>
+{{# Script to make the dropdown buttons work
+    @todo Pull this either into the site.js #}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
       const menuButton = document.getElementById('menu-button');

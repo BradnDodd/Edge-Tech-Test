@@ -24,12 +24,15 @@
         <div class="mt-4 lg:row-span-3 lg:mt-0">
             <div class="flex flex-col flex-wrap w-3/4">
                 <p>
-                    {{ description }}...
+                    {{ description }}
                 </p>
+                {{# Pull these genres into a partial #}}
                 <div class="flex flex-wrap my-5">
-                    {{ if entries}}
-                        <a href="{{ url }}" class="inline px-2 py-1 mr-2 text-sm bg-red-400 rounded-md">{{ title }}</a>
-                    {{ /if}}
+                    {{ genre }}
+                        {{ if entries}}
+                            <a href="{{ url }}" class="inline px-2 py-1 mr-2 text-sm bg-red-400 rounded-md">{{ title }}</a>
+                        {{ /if}}
+                    {{ /genre }}
                 </div>
             </div>
         </div>

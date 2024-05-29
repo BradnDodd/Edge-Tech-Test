@@ -1,8 +1,0 @@
-name: 'Brad Dodd'
-super: true
-id: d830de32-a0be-47d7-9f11-5f980e5d4ca3
-password_hash: $2y$12$doZQHQaPfDXUNOKcxROFX.lOLgfGpz/iSfkPLhDMI2/zfaO.mB62u
-preferences:
-  taxonomies:
-    genre:
-      after_save: create_another

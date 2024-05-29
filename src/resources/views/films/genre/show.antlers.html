@@ -1,13 +1,14 @@
 <h1>Films in {{ title }} genre</h1>
 <div class="grid justify-between grid-cols-4 gap-3 p-10 border-2 border-black ">
     <div class="grid justify-between grid-cols-1 col-span-3 gap-3 px-10">
+        {{# @todo Pull a single "film card" into a partial #}}
         {{ entries }}
             <div class="flex flex-wrap">
                 <div class="w-1/4 px-5">
                     <img class="w-full h-auto" src="{{ poster ?? 'https://placehold.co/150x150' }}" alt="{{ poster:alt }}">
                 </div>
                 <div class="flex flex-col flex-wrap w-3/4">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{{ title }} ({{ release_date format="Y" }})</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 "><a href="{{ url }}">{{ title }} ({{ release_date format="Y" }})</a></h5>
                     <div class="flex">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
@@ -15,18 +16,27 @@
                         <p class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">{{ rating }} / 10</p>
                     </div>
                     <p class="font-normal text-gray-700">
+                        {{# @todo only show elipses if description is over 140 characters
+                            @todo pull max description length into a config/ env variable/ proprty of the film collection
+                         #}}
                         {{ description | safe_truncate(140) }}...
                     </p>
 
                     <div class="flex flex-wrap">
+                        {{# @todo pull genres into a component #}}
                         {{ genre }}
-                            <a href="{{ url }}" class="inline px-2 py-1 mr-2 text-sm bg-red-400 rounded-md">{{ title }}</a>
+                            {{ if entries}}
+                                <a href="{{ url }}" class="inline px-2 py-1 mr-2 text-sm bg-red-400 rounded-md">{{ title }}</a>
+                            {{ /if}}
                         {{ /genre }}
                     </div>
                 </div>
             </div>
         {{ /entries }}
     </div>
+    {{# Search Bar
+        @todo Pull this out into a partial
+    #}}
     <div class="flex col-span-1 p-10 border-2 border-black">
         <div x-data="{ showSearch: false, searchQuery: '', searchResults: false }" @keydown.escape="showSearch = (searchQuery !== ''); searchQuery = ''">
             <button type="button" class="items-center hidden px-4 py-2 antialiased font-bold text-gray-900 transition md:flex group hover:text-gray-500" @click="showSearch = true; $focus.next()">

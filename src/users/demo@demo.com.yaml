@@ -1,0 +1,8 @@
+name: Demo
+super: true
+id: 7fbb4b1f-cb01-4cbd-adfc-db176daf41ef
+password_hash: $2y$12$wO.k3W7eRFz7KIbQ5agSberj2T4/BfgTmr/ZVXgVPLFxu2y0VfiG6
+preferences:
+  collections:
+    films:
+      after_save: create_another

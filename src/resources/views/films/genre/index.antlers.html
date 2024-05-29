@@ -1,11 +1,15 @@
 <div class="grid justify-between grid-cols-4 gap-3 p-10 border-2 border-black ">
     <div class="grid justify-between grid-cols-1 col-span-3 gap-3 px-10">
+        {{# @todo Pull this out into a partial #}}
         {{ genre }}
-            <div>
-                <a class="inline-block text-3xl font-bold text-black hover:text-yellow" href="{{ url }}">{{ title }}</a>
-            </div>
+            {{ if entries}}
+                <a href="{{ url }}" class="inline px-2 py-1 mr-2 text-sm bg-red-400 rounded-md">{{ title }}</a>
+            {{ /if}}
         {{ /genre }}
     </div>
+    {{# Search Bar
+        @todo Pull this out into a partial
+    #}}
     <div class="flex col-span-1 p-10 border-2 border-black">
         <div x-data="{ showSearch: false, searchQuery: '', searchResults: false }" @keydown.escape="showSearch = (searchQuery !== ''); searchQuery = ''">
             <button type="button" class="items-center hidden px-4 py-2 antialiased font-bold text-gray-900 transition md:flex group hover:text-gray-500" @click="showSearch = true; $focus.next()">

@@ -49,3 +49,11 @@ The series was based on V3 but I scanned through the V3-4 and V4-5 upgrade guide
 7. I chose Laravel breeze with blade templates to handle the User accounts outside of Statamic.
 This is due to how much functionality you get out of box with the basic breeze install then it was just a case of small styling tweaks to match the statamic styling.
 One future step would be to bring all Auth pages under statamic control and align the styling
+8. Ran through the files created so far and commented where I would make improvements
+9. Next areas I would focus on;
+    - Refactoring out the views into various partials
+    - Add more meta fields and related filters
+    - Improve responsive/ mobile design
+    - Add a cron job that calls the TMDb API and creates entities. Would likely create an interface for FilmDatabases to allow in the future to plumb in Kaggle or other providers of data
+        - Would likely add these as unpublished and create a widget for the dashboard for unpublished films to be worked by an admin
+    - Tooling; static analysis, linting, styling.
