@@ -17,3 +17,5 @@ The development environment for this project is designed to be ran on docker and
 5. Run `php artisan key:generate`
 6. Run `npm run dev` 
 7. Navigate to `http://edge.test`
+
+Access the control panel via `http://edge.test/cp`
