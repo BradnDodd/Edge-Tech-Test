@@ -23,4 +23,6 @@ npm run dev
 ```
 6. Navigate to `http://edge.test`
 
+If you have trouble with the CSS not working then try running `npm run build` instead of `npm run dev` inside the container; just make sure you have removed the `/var/www/public/hot` directory inside the container
+
 Access the control panel via `http://edge.test/cp`
